@@ -49,7 +49,7 @@
   */
 
 /* USER CODE BEGIN PRIVATE_TYPES */
-#define HL_RX_BUFFER_SIZE 32 // Can be larger if desired
+#define HL_RX_BUFFER_SIZE 64 // Can be larger if desired
 /* USER CODE END PRIVATE_TYPES */
 
 /**

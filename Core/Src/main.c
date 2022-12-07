@@ -35,7 +35,7 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-#define USB_TX_BUFFER_SIZE 256
+#define USB_TX_BUFFER_SIZE 64
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -137,6 +137,8 @@ int main(void)
   {
 	  if(CDC_GetRxBufferBytesAvailable_FS()>0)
 	  {
+		  setLED(1);
+
 		  memset(oBuf, 0, CMD_REP_BUFSIZE);
 
 		  if(CDC_ReadRxBuffer_FS(iBuf, 1)==USB_CDC_RX_BUFFER_OK)
@@ -186,6 +188,8 @@ int main(void)
 				  // Do nothing
 			  }
 		  }
+
+		  setLED(0);
 	  }
     /* USER CODE END WHILE */
 
